@@ -40,16 +40,17 @@ function ranker<RankItem>(
 
 interface Pokemon {
   name: string;
-  hp: NumberConstructor;
+  hp: number;
 }
 
 const pokemon: Pokemon[] = [
   {
-    name: "Pikachu",
+    name: "Pika",
     hp: 20,
   },
   {
-    name: "Megaasaur",
+    name: "Mega",
     hp: 5,
   },
 ];
+const ranks = ranker(pokemon, ({ hp }) => hp);
