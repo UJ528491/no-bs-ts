@@ -52,5 +52,10 @@ const pokemon: Pokemon[] = [
     name: "Mega",
     hp: 5,
   },
+  {
+    name: "Busizer",
+    hp: 13,
+  },
 ];
 const ranks = ranker(pokemon, ({ hp }) => hp);
+console.log(ranks);
