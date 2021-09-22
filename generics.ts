@@ -29,31 +29,38 @@ function ranker<RankItem>(
   items: RankItem[],
   rank: (v: RankItem) => number
 ): RankItem[] {
-  const ranks: Rank<RankItem>[] = items.map(item => ({
-    item,
-    rank: rank(item),
-  }));
+  const ranks: Rank<RankItem>[] = items.map(item => {
+    console.log("item : ", item);
+    console.log("rank : ", rank(item));
+
+    return {
+      item,
+      rank: rank(item),
+    };
+  });
+  console.log(ranks);
+
   ranks.sort((a, b) => a.rank - b.rank);
 
   return ranks.map(rank => rank.item);
 }
 
 interface Pokemon {
-  name: string;
+  name: number;
   hp: number;
 }
 
 const pokemon: Pokemon[] = [
   {
-    name: "Pika",
+    name: 99,
     hp: 20,
   },
   {
-    name: "Mega",
+    name: 88,
     hp: 5,
   },
   {
-    name: "Busizer",
+    name: 77,
     hp: 13,
   },
 ];
